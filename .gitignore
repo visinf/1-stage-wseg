@@ -1,0 +1,4 @@
+*.swp
+*.pyc
+logs/
+data/

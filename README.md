@@ -6,6 +6,7 @@ This repository contains the original implementation of our paper:
 **Single-stage Semantic Segmentation from Image Labels**<br>
 *[Nikita Araslanov](https://arnike.github.io) and [Stefan Roth](https://www.visinf.tu-darmstadt.de/team_members/sroth/sroth.en.jsp)*<br>
 To appear at CVPR 2020.
+[[arXiv preprint]](https://arxiv.org/abs/2005.08104)
 
 Contact: Nikita Araslanov <fname.lname@visinf.tu-darmstadt.de>
 

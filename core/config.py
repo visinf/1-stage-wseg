@@ -69,25 +69,25 @@ __C.DATASET.SCALE_TO = 1.0
 __C.DATASET.PATH = "data/images"
 
 # ---------------------------------------------------------------------------- #
-# Generator options
+# Network options
 # ---------------------------------------------------------------------------- #
-__C.GENERATOR  = AttrDict()
-__C.GENERATOR.MODEL = 'vgg16'
-__C.GENERATOR.BACKBONE = 'resnet50'
-__C.GENERATOR.PRE_WEIGHTS_PATH = ""
-__C.GENERATOR.OPT = 'SGD'
-__C.GENERATOR.LR = 0.001
-__C.GENERATOR.BETA1 = 0.5
-__C.GENERATOR.MOMENTUM = 0.9
-__C.GENERATOR.WEIGHT_DECAY = 1e-5
-__C.GENERATOR.LOSS = 'SoftMargin'
-__C.GENERATOR.MASK_LOSS_BCE = 1.0
-__C.GENERATOR.BG_SCORE = 0.1 # background score (only for CAM)
-__C.GENERATOR.FOCAL_P = 3
-__C.GENERATOR.FOCAL_LAMBDA = 0.01
-__C.GENERATOR.PAMR_KERNEL = [1, 2, 4, 8, 12, 24]
-__C.GENERATOR.PAMR_ITER = 10
-__C.GENERATOR.SG_PSI = 0.3
+__C.NET  = AttrDict()
+__C.NET.MODEL = 'vgg16'
+__C.NET.BACKBONE = 'resnet50'
+__C.NET.PRE_WEIGHTS_PATH = ""
+__C.NET.OPT = 'SGD'
+__C.NET.LR = 0.001
+__C.NET.BETA1 = 0.5
+__C.NET.MOMENTUM = 0.9
+__C.NET.WEIGHT_DECAY = 1e-5
+__C.NET.LOSS = 'SoftMargin'
+__C.NET.MASK_LOSS_BCE = 1.0
+__C.NET.BG_SCORE = 0.1 # background score (only for CAM)
+__C.NET.FOCAL_P = 3
+__C.NET.FOCAL_LAMBDA = 0.01
+__C.NET.PAMR_KERNEL = [1, 2, 4, 8, 12, 24]
+__C.NET.PAMR_ITER = 10
+__C.NET.SG_PSI = 0.3
 
 # Mask Inference
 __C.MASKS = AttrDict()

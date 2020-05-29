@@ -56,13 +56,13 @@ class DecTrainer(BaseTrainer):
             self.classIndex[cname] = i
 
         # model
-        self.enc = get_model(cfg.GENERATOR, num_classes=self.nclass)
-        self.criterion_cls = get_criterion(cfg.GENERATOR.LOSS)
+        self.enc = get_model(cfg.NET, num_classes=self.nclass)
+        self.criterion_cls = get_criterion(cfg.NET.LOSS)
         print(self.enc)
 
         # optimizer using different LR
-        enc_params = self.enc.parameter_groups(cfg.GENERATOR.LR, cfg.GENERATOR.WEIGHT_DECAY)
-        self.optim_enc = self.get_optim(enc_params, cfg.GENERATOR)
+        enc_params = self.enc.parameter_groups(cfg.NET.LR, cfg.NET.WEIGHT_DECAY)
+        self.optim_enc = self.get_optim(enc_params, cfg.NET)
 
         # checkpoint management
         self._define_checkpoint('enc', self.enc, self.optim_enc)
@@ -100,7 +100,7 @@ class DecTrainer(BaseTrainer):
             loss_mask = loss_mask.mean()
 
             if not PRETRAIN:
-                loss += cfg.GENERATOR.MASK_LOSS_BCE * loss_mask
+                loss += cfg.NET.MASK_LOSS_BCE * loss_mask
 
             assert not "pseudo" in masks
             masks["pseudo"] = pseudo_gt

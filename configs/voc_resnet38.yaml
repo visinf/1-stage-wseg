@@ -8,7 +8,7 @@ TRAIN:
   NUM_EPOCHS: 24
   NUM_WORKERS: 8
   PRETRAIN: 5
-GENERATOR:
+NET:
   BACKBONE: "resnet38"
   MODEL: "ae"
   PRE_WEIGHTS_PATH: "./models/weights/ilsvrc-cls_rna-a1_cls1000_ep-0001.pth"

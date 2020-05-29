@@ -61,7 +61,7 @@ if __name__ == '__main__':
     num_classes = 21
 
     # Loading the model
-    model = get_model(cfg.GENERATOR, num_classes=num_classes)
+    model = get_model(cfg.NET, num_classes=num_classes)
     checkpoint = Checkpoint(args.snapshot_dir, max_n = 5)
     checkpoint.add_model('enc', model)
     checkpoint.load(args.resume)

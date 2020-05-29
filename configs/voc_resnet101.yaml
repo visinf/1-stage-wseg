@@ -8,14 +8,13 @@ TRAIN:
   NUM_EPOCHS: 20
   NUM_WORKERS: 8
   PRETRAIN: 5
-GENERATOR:
+NET:
   BACKBONE: "resnet101"
   MODEL: "ae"
   PRE_WEIGHTS_PATH: "./models/weights/resnet101-5d3b4d8f.pth"
   LR: 0.001
   OPT: "SGD"
   LOSS: "SoftMargin"
-  LR_SCHEDULER: "none"
   WEIGHT_DECAY: 0.0005
 TEST:
   METHOD: "multiscale" # multiscale | crop

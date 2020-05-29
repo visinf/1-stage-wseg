@@ -13,7 +13,7 @@ RUN_ID=
 #
 
 LOG_DIR=logs/${DS}/${EXP}
-CMD="python train.py --dataset $DS --cfg configs/voc_resnet38.yaml --exp $EXP --run $RUN_ID --set GENERATOR.MODEL bsl TRAIN.NUM_EPOCHS 6"
+CMD="python train.py --dataset $DS --cfg configs/voc_resnet38.yaml --exp $EXP --run $RUN_ID --set NET.MODEL bsl TRAIN.NUM_EPOCHS 6"
 LOG_FILE=$LOG_DIR/${RUN_ID}.log
 
 if [ ! -d "$LOG_DIR" ]; then

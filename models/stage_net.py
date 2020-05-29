@@ -162,7 +162,7 @@ def network_factory(cfg):
             # note, that the masks contain the background as the first channel
             return logits, masks
 
-        def forward(self, y, labels=None):
+        def forward(self, y, _, labels=None):
             test_mode = labels is None
 
             x = self.forward_backbone(y)

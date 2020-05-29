@@ -129,7 +129,7 @@ class VOCSegmentation(PascalVOC):
         with open(_split_f, "r") as lines:
             for line in lines:
                 _image, _mask = line.strip("\n").split(' ')
-                _image = os.path.join(self.root, _image.lstrip('/'))
+                _image = os.path.join(self.root, _image)
                 assert os.path.isfile(_image), '%s not found' % _image
                 self.images.append(_image)
             

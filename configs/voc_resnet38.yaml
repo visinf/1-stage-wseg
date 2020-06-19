@@ -3,12 +3,13 @@ DATASET:
   CROP_SIZE: 321
   SCALE_FROM: 0.9
   SCALE_TO: 1.0
+  NUM_CLASSES: 21
 TRAIN:
   BATCH_SIZE: 16
   NUM_EPOCHS: 24
   NUM_WORKERS: 8
   PRETRAIN: 5
-GENERATOR:
+NET:
   BACKBONE: "resnet38"
   MODEL: "ae"
   PRE_WEIGHTS_PATH: "./models/weights/ilsvrc-cls_rna-a1_cls1000_ep-0001.pth"

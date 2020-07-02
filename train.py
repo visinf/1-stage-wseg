@@ -201,8 +201,6 @@ class DecTrainer(BaseTrainer):
         self.trainloader_val.dataset.set_norm(self.enc.normalize)
 
     def _apply_cmap(self, mask_idx, mask_conf):
-        # TODO:
-        # Warning: ugly code ahead
         palette = self.trainloader.dataset.get_palette()
 
         masks = []

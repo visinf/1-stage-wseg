@@ -57,11 +57,8 @@ if __name__ == '__main__':
     check_dir(args.mask_output_dir, "vis")
     check_dir(args.mask_output_dir, "crf")
 
-    # TODO: fix hard-coding
-    num_classes = 21
-
     # Loading the model
-    model = get_model(cfg.NET, num_classes=num_classes)
+    model = get_model(cfg.NET, num_classes=cfg.TEST.NUM_CLASSES)
     checkpoint = Checkpoint(args.snapshot_dir, max_n = 5)
     checkpoint.add_model('enc', model)
     checkpoint.load(args.resume)

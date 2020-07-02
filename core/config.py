@@ -48,6 +48,7 @@ __C.TEST.CROP_SIZE = [448, 448]
 __C.TEST.CROP_GRID_SIZE = [2, 2]
 __C.TEST.BATCH_SIZE = 8
 __C.TEST.BG_POW = 3
+__C.TEST.NUM_CLASSES = 21
 
 # use ground-truth labels to remove
 # false positive masks

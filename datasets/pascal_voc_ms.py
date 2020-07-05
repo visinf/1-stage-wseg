@@ -91,7 +91,8 @@ class VOC12ClsDataset(VOC12ImageDataset):
             unique_labels = unique_labels[1:]
 
         assert unique_labels.size > 0, 'No labels found in %s' % self.masks[index]
-        labels[unique_labels - 1] = 1
+        unique_labels -= 1 # shifting since no BG class
+        labels[unique_labels.tolist()] = 1
         
         return name, img, labels, mask.astype(np.int)
 

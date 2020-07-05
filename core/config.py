@@ -121,7 +121,11 @@ def assert_and_infer_cfg(make_immutable=True):
 def merge_cfg_from_file(cfg_filename):
     """Load a yaml config file and merge it into the global config."""
     with open(cfg_filename, 'r') as f:
-        yaml_cfg = AttrDict(yaml.load(f))
+        if hasattr(yaml, "FullLoader"):
+            yaml_cfg = AttrDict(yaml.load(f, Loader=yaml.FullLoader))
+        else:
+            yaml_cfg = AttrDict(yaml.load(f))
+
     _merge_a_into_b(yaml_cfg, __C)
 
 cfg_from_file = merge_cfg_from_file

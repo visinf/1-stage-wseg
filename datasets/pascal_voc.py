@@ -169,10 +169,10 @@ class VOCSegmentation(PascalVOC):
         labels = torch.zeros(self.NUM_CLASS - 1)
         if unique_labels[0] == self.CLASS_IDX['background']:
             unique_labels = unique_labels[1:]
-        unique_labels -= 1
+        unique_labels -= 1 # shifting since no BG class
 
         assert unique_labels.size > 0, 'No labels found in %s' % self.masks[index]
-        labels[unique_labels] = 1
+        labels[unique_labels.tolist()] = 1
 
         # general resize, normalize and toTensor
         image, mask = self.transform(image, mask)

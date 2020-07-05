@@ -7,8 +7,12 @@ import numpy as np
 import torchvision.utils as vutils
 
 from PIL import Image, ImageDraw, ImageFont
-from tensorboardX import SummaryWriter
 from utils.checkpoints import Checkpoint
+
+try: # backward compatibility
+    from tensorboardX import SummaryWriter
+except ImportError:
+    from torch.utils.tensorboard import SummaryWriter
 
 from core.config import cfg, cfg_from_file, cfg_from_list
 

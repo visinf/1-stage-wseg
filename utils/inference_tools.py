@@ -92,7 +92,7 @@ class MergeMultiScale(ResultWriter):
             mask_cut = F.interpolate(mask_cut, imsize_hw, mode='bilinear', align_corners=False)[0]
 
             # flipping if necessary
-            if  i % 2 == 1:
+            if self.cfg.FLIP and i % 2 == 1:
                 mask_cut = torch.flip(mask_cut, (-1, ))
 
             # getting the max response
@@ -125,7 +125,7 @@ class MergeCrops(ResultWriter):
             s_h, e_h, s_w, e_w = pads[0][:4]
             pad_t, pad_l = pads[0][4:]
 
-            if ii % 2 == 0:
+            if self.cfg.FLIP and ii % 2 == 0:
                 mask = mask.flip(-1)
 
             # crop mask, if needed

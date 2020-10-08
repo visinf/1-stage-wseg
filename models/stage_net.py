@@ -63,6 +63,7 @@ def balanced_mask_loss_ce(mask, pseudo_gt, gt_labels, ignore_index=255):
     # otherwise, ignore
     weight = pseudo_gt.sum(1).type_as(mask_gt)
     mask_gt += (1 - weight) * ignore_index
+    mask_gt = torch.clamp(mask_gt, max=ignore_index)
 
     # class weight balances the loss w.r.t. number of pixels
     # because we are equally interested in all classes

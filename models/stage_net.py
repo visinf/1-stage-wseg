@@ -61,8 +61,8 @@ def balanced_mask_loss_ce(mask, pseudo_gt, gt_labels, ignore_index=255):
 
     # for each pixel there should be at least one 1
     # otherwise, ignore
-    weight = pseudo_gt.sum(1).type_as(mask_gt)
-    mask_gt += (1 - weight) * ignore_index
+    ignore_mask = pseudo_gt.sum(1) < 1.
+    mask_gt[ignore_mask] = ignore_index
 
     # class weight balances the loss w.r.t. number of pixels
     # because we are equally interested in all classes

@@ -1,12 +1,15 @@
 # Single-Stage Semantic Segmentation from Image Labels
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Framework](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?&logo=PyTorch&logoColor=white)](https://pytorch.org/)
+
 This repository contains the original implementation of our paper:
 
 
 **Single-stage Semantic Segmentation from Image Labels**<br>
 *[Nikita Araslanov](https://arnike.github.io) and [Stefan Roth](https://www.visinf.tu-darmstadt.de/team_members/sroth/sroth.en.jsp)*<br>
-To appear at CVPR 2020.
-[[arXiv preprint]](https://arxiv.org/abs/2005.08104)
+CVPR 2020. [[pdf](https://openaccess.thecvf.com/content_CVPR_2020/papers/Araslanov_Single-Stage_Semantic_Segmentation_From_Image_Labels_CVPR_2020_paper.pdf)] [[supp]()]
+[[arXiv](https://arxiv.org/abs/2005.08104)]
 
 Contact: Nikita Araslanov <fname.lname@visinf.tu-darmstadt.de>
 
@@ -85,10 +88,12 @@ We thank PyTorch team, and Jiwoon Ahn for releasing his [code](https://github.co
 ## Citation
 We hope that you find this work useful. If you would like to acknowledge us, please, use the following citation:
 ```
-@inproceedings{Araslanov:2020:WSEG,
-  title     = {Single-Stage Semantic Segmentation from Image Labels},
-  author    = {Araslanov, Nikita and and Roth, Stefan},
-  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year = {2020}
+@InProceedings{Araslanov:2020:SSS,
+author = {Araslanov, Nikita and Roth, Stefan},
+title = {Single-Stage Semantic Segmentation From Image Labels},
+booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+pages = {4253--4262}
+year = {2020}
 }
 ```
